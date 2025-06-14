@@ -10,7 +10,7 @@ Select ONE Additional Feature to Add
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
-[ no ] Feature 5 - Add an Additional Interactive Drop-down
+[ yes ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
 <!DOCTYPE html>
@@ -21,64 +21,109 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Zuri</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadtxXyVjVDyg7TfbT8FJIdGSXdrT3ex9yqQ&s"
+      width="400"
+      height="400"/>
+    
     <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
+    
+    <!-- Lash Question -->
+    <form id="lash-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        👁 What is my favorite lash style?
+        <select id="lash-answer">
+          <option value="lash1">Doll Eye</option>
+          <option value="lash2">Cat Eye</option>
+          <option value="lash3">Fox Eye</option>
+          <option value="lash4">Hybrid Set</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Lash Style Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="lash-result"></div>
+    <img id="lash-Image" src="https://s3-media0.fl.yelpcdn.com/bphoto/FD-aolVtjZtoDqVRF3w9HQ/1000s.jpg" style="display:hide;" alt="Lash Image" width="250" lengh="300" />
+    
     <hr />
-    <!-- Book Question -->
-    <form id="book-form">
+   
+    <!-- Dance Question -->
+    <form id="Dance-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        💃What is my favorite dance genre?
+        <select id="dance-answer">
+          <option value="dance1">Ballet</option>
+          <option value="dance2">Modern</option>
+          <option value="dance3">Contemporary</option>
+          <option value="dance4">Hip Hop</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Dance Genre Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="dance-result"></div>
+    <img id="dance-img" src="https://www.shutterstock.com/image-vector/silhouette-dancers-simple-260nw-302757734.jpg" style="display:hide;" alt="Dance Image"/>
+        
+    <!-- Food Question -->
+    <form id="Food-form">
+      <label>
+        🍽 What is my favorite Food?
+        <select id="food-answer">
+          <option value="food1">Pizza</option>
+          <option value="food2">Rice + Beans</option>
+          <option value="food3">Burritos</option>
+          <option value="food4">French Fries</option>
+        </select>
+      </label>
+      <button type="submit">Check Food Answer</button>
+    </form>
+    <div id="food-result"></div>
+    <img id="food-img"
+    src="https://elavegan.com/wp-content/uploads/2020/03/spanish-rice-and-red-beans-in-a-bowl.jpg"
+    width="250" height="300"/>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      //Lash Question jQuery Code
+      $("#lash-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#lash-answer");
         var answer = $answer.val();
+        var $lashResult = $("#lash-result");
+        var $lashImage = $("#lash-image");
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "lash2") {
+          $lash-result.text("That is Correct!");
+          
         } else {
-          $("#movie-result").text("Try Again!");
+          $lash-result.text("Try Again!");
         }
       });
 
-      //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      //Dance Question jQuery Code
+      $("#dance-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#dance-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "dance4") {
+          $dance-result.text("Yes! You Got It");
         } else {
-          $("#book-result").text("Try Again!");
+          $dance-result.text("Try Again!");
+        }
+      });
+      
+      //Food Question jQuery Code
+      $("#food-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#dance-answer");
+        var answer = $answer.val();
+
+        if (answer === "food2") {
+          $("#food-result").text("Yes! Correct");
+        } else {
+          $("#food-result").text("Try Again!");
         }
       });
     </script>
